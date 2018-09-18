@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E509E5C121519A7C007FAA05 /* Home CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509E5C021519A7C007FAA05 /* Home CollectionViewController.swift */; };
+		E509E5C321519C10007FAA05 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509E5C221519C10007FAA05 /* MyCollectionViewCell.swift */; };
 		E56D96C52144E51400CBE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56D96C42144E51400CBE9BC /* AppDelegate.swift */; };
 		E56D96CA2144E51400CBE9BC /* TravelPics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E56D96C82144E51400CBE9BC /* TravelPics.storyboard */; };
 		E56D96CC2144E51700CBE9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E56D96CB2144E51700CBE9BC /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E509E5C021519A7C007FAA05 /* Home CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home CollectionViewController.swift"; sourceTree = "<group>"; };
+		E509E5C221519C10007FAA05 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		E56D96C12144E51400CBE9BC /* TravelPics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E56D96C42144E51400CBE9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E56D96C92144E51400CBE9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TravelPics.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				E56D96CB2144E51700CBE9BC /* Assets.xcassets */,
 				E56D96CD2144E51700CBE9BC /* LaunchScreen.storyboard */,
 				E56D96D02144E51700CBE9BC /* Info.plist */,
+				E509E5C021519A7C007FAA05 /* Home CollectionViewController.swift */,
+				E509E5C221519C10007FAA05 /* MyCollectionViewCell.swift */,
 			);
 			path = TravelPics;
 			sourceTree = "<group>";
@@ -132,7 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E509E5C121519A7C007FAA05 /* Home CollectionViewController.swift in Sources */,
 				E56D96C52144E51400CBE9BC /* AppDelegate.swift in Sources */,
+				E509E5C321519C10007FAA05 /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
