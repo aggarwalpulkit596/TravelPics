@@ -15,6 +15,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
-        
+        pictureImgView.layer.cornerRadius = 5
+        pictureImgView.clipsToBounds = true
     }
 }

@@ -12,7 +12,8 @@ import UIKit
  
  var namesArray = ["Spain", "Sweden", "Brazil", "Bardados", "Hawai", "South Africa", "Australia", "Mauracious", "Fiji", "Canary Island", "Egypt", "Kenya","Spain", "Sweden", "Brazil", "Bardados", "Hawai", "South Africa", "Australia", "Mauracious", "Fiji", "Canary Island", "Egypt", "Kenya"]
  
-class Home_CollectionViewController: UICollectionViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class Home_CollectionViewController: UICollectionViewController,
+UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegateFlowLayout{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,35 +81,26 @@ class Home_CollectionViewController: UICollectionViewController,UIImagePickerCon
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: (collectionView.frame.size.width/3) - 10, height: (collectionView.frame.size.width/3)) //-10 for margin
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    @IBAction func close(segue :UIStoryboardSegue){
+        
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! FullImageViewController
+        
+        if let indexPathArray = collectionView?.indexPathsForSelectedItems
+        {
+            let selectIndexPath = indexPathArray[0]
+            
+            let selectedImage = imagesArray[selectIndexPath.row]
+            
+            destinationVC.fullimage = selectedImage
+        }
+    }
 
 }
