@@ -12,14 +12,43 @@ import UIKit
  
  var namesArray = ["Spain", "Sweden", "Brazil", "Bardados", "Hawai", "South Africa", "Australia", "Mauracious", "Fiji", "Canary Island", "Egypt", "Kenya","Spain", "Sweden", "Brazil", "Bardados", "Hawai", "South Africa", "Australia", "Mauracious", "Fiji", "Canary Island", "Egypt", "Kenya"]
  
-class Home_CollectionViewController: UICollectionViewController {
+class Home_CollectionViewController: UICollectionViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
-
+    @IBAction func openCamera(_ sender: Any) {
+        
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        
+        present(picker,animated: true)
+        }else{
+            let alert = UIAlertController(title: "Camera Unavailable", message: "You do not have camera available on your device", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "Ok Cool", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            
+            let delAction = UIAlertAction(title: "Delete?", style: .destructive, handler: { (action) in
+                
+                print("Deleted")
+                
+                })
+            alert.addAction(delAction)
+            
+            present(alert,animated: true)
+            
+            
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
