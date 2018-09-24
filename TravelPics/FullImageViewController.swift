@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FullImageViewController: UIViewController {
+class FullImageViewController: UIViewController,UIScrollViewDelegate {
     
     var fullimage = UIImage(named : "1")
 
@@ -19,8 +19,17 @@ class FullImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollerView.delegate = self
+        
         fullImgView.image = fullimage
+        
+        scrollerView.minimumZoomScale = 1
+        scrollerView.maximumZoomScale = 4
+        scrollerView.contentSize = fullImgView.frame.size
     }
   
-
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return fullImgView
+    }
+    
 }
